@@ -140,16 +140,16 @@ $('#confirmButton').addEventListener('click', () => {
 $('#saveBtn').addEventListener('click', event => {
   const button = event.currentTarget;
   button.classList.toggle('active');
-  showToast(button.classList.contains('active') ? 'Parvatansh saved to your stays.' : 'Removed from your saved stays.');
+  showToast(button.classList.contains('active') ? 'The Himalayan Hotel saved to your stays.' : 'Removed from your saved stays.');
 });
 $('#saveStay').addEventListener('click', event => {
   const button = event.currentTarget;
   const saved = button.classList.toggle('active');
   button.textContent = saved ? '♥  Saved' : '♡  Save';
-  showToast(saved ? 'Parvatansh saved to your stays.' : 'Removed from your saved stays.');
+  showToast(saved ? 'The Himalayan Hotel saved to your stays.' : 'Removed from your saved stays.');
 });
 $('#shareStay').addEventListener('click', async () => {
-  const shareData = { title: 'Parvatansh Homestay', text: 'Take a look at Parvatansh Homestay.' };
+  const shareData = { title: 'The Himalayan Hotel', text: 'Take a look at The Himalayan Hotel.' };
   if (navigator.share) {
     try { await navigator.share(shareData); } catch (error) { if (error.name !== 'AbortError') showToast('Sharing is not available in this browser.'); }
   } else if (navigator.clipboard) {
@@ -173,3 +173,5 @@ $('.menu-btn').addEventListener('click', event => {
   event.currentTarget.setAttribute('aria-expanded', nav.classList.contains('nav-open'));
 });
 $$('.main-nav a').forEach(link => link.addEventListener('click', () => $('.main-nav').classList.remove('nav-open')));
+
+
